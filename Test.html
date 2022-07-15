@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <h2> Assignment Solution By Musa Muawiyya Modibbo</h2>
+</head>
+<body>
+    Enter number : <input id="inputnum" />
+    Enter Target : <input id="target"/>
+    <input type ="button" value="Submit" onclick="fxnCall();" />
+    <div id="outputnew"> </div>
+</body>
+<script>
+    const twoSumm = (nums, target) => {
+            for(let i=0;i<nums.length-1;i++)
+            {
+                for(let j = i+1;j<nums.length;j++)
+                {
+                    if(parseInt(nums[i]) + parseInt(nums[j]) == target)
+                        return ([nums[i], nums[j]]);
+                }
+            }
+        }
+
+        
+        
+        function fxnCall(){
+        var tar = document.getElementById("target").value;
+        var arr = (document.getElementById("inputnum").value).split(',');
+        
+        //alert(arr);
+        //var arr = [2,7,8,4,6];
+        
+        var result = twoSumm(arr, tar);
+        //alert(result);
+        document.getElementById("outputnew").innerHTML  = "Result: " + result;
+        }
+    
+    
+</script>
+</html>
